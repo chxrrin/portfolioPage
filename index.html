@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio Prototype</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Patrick+Hand&display=swap');
+    </style>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="topbar">
+        <div class="logo">cherry.dev</div>
+        <div class="clock" id="clock"></div>
+    </div>
+
+    <div class="mainWrapper">
+        <div class="main">
+            <img src="portfolioAssets/earphones.png" id="earphones">
+            
+            <div id="leftSide">
+                <div class="id">
+                    <img src="portfolioAssets/id.png" alt="idCard" id="idCard">
+                </div>
+
+                <div class="ipod">
+                    <div id="ipodScreen">
+                        //ipod tingz
+                    </div>
+                    <div id="ipodCircle">
+                        //ipod buttons
+                    </div>
+                </div>
+            </div>
+
+            <div id="rightSide">
+                <div class="portfolio">
+                    <div class="tabBar">
+                        <img src="portfolioAssets/projectsTab.png" alt="projects" class="tabs">
+                        <img src="portfolioAssets/experienceTab.png" alt="experience" class="tabs">
+                        <img src="portfolioAssets/aboutMeTab.png" alt="aboutMe" class="tabs">
+                    </div>
+                    <div id="tabContent">
+                        <div id="paper">
+                            <div class="content"></div>
+
+                            <div class="content"></div>
+
+                            <div class="content"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottombar">
+        <!-- SWAP: replace each href with your real profile link, and each icon image with your own -->
+        <a href="https://linkedin.com/in/your-handle" target="_blank" title="LinkedIn">
+            <img src="https://placehold.co/40x40/0077B5/ffffff?text=in" alt="LinkedIn">
+        </a>
+        <a href="https://instagram.com/your-handle" target="_blank" title="Instagram">
+            <img src="https://placehold.co/40x40/E1306C/ffffff?text=IG" alt="Instagram">
+        </a>
+        <a href="https://discord.com/users/your-id" target="_blank" title="Discord">
+            <img src="https://placehold.co/40x40/5865F2/ffffff?text=DC" alt="Discord">
+        </a>
+        <a href="mailto:you@example.com" title="Email">
+            <img src="https://placehold.co/40x40/1B1B1B/ffffff?text=%40" alt="Email">
+        </a>
+    </div>
+</body>
+
+</html>
+
+<script>
+    function updateScale() {
+        const nativeWidth = 1400;
+        const nativeHeight = 900;
+        const wrapper = document.querySelector('.mainWrapper');
+
+        const scale = Math.min(
+            wrapper.clientWidth / nativeWidth,
+            wrapper.clientHeight / nativeHeight
+        );
+
+        document.documentElement.style.setProperty('--scale-factor', scale);
+    }
+    window.addEventListener('resize', updateScale);
+    window.addEventListener('load', updateScale);
+</script>
