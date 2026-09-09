@@ -89,20 +89,58 @@ html, body {
     z-index: 10;
 }
 
-#page {
+#paper {
     background-image: url("portfolioAssets/page.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
 
     position: relative;
-    left: -130px;
-    top: -145px;
-
-    width: 900px;
+    left: 75px;
+    top: 55px;
+    width: 800px;
     height: 700px;
 
-    z-index: 11;
+    z-index: 100;
+}
+
+#content {
+    position: relative;
+    left: 125px;
+    top: 105px;
+
+    overflow-y: auto;
+
+    width: 555px;
+    height: 500px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+    align-items: center;
+}
+
+#content::-webkit-scrollbar {
+    display: none;
+}
+
+.contentText {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+
+    background-color: antiquewhite;
+
+    padding: 20px;
+}
+
+p {
+    width: 275px;
+}
+
+.poster {
+    width: 200px;
+    padding-top: 20px;
 }
 
 .tabBar {
