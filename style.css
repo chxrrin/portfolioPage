@@ -77,14 +77,14 @@ html, body {
     background-image: url("portfolioAssets/tab.png");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: contain;
+    background-size: cover;
 
     width: 950px;
-    height: 750px;
+    height: 800px;
 
     position: relative;
-    left: -130px;
-    top: -145px;
+    left: -180px;
+    top: -125px;
 
     z-index: 10;
 }
@@ -93,26 +93,26 @@ html, body {
     background-image: url("portfolioAssets/page.png");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: contain;
+    background-size: cover;
 
     position: relative;
     left: 75px;
-    top: 55px;
+    top: 115px;
     width: 800px;
-    height: 700px;
+    height: 650px;
 
     z-index: 100;
 }
 
-#content {
+.content {
     position: relative;
-    left: 125px;
-    top: 105px;
+    left: 75px;
+    top: 50px;
 
     overflow-y: auto;
 
-    width: 555px;
-    height: 500px;
+    width: 655px;
+    height: 555px;
 
     display: flex;
     flex-direction: column;
@@ -120,7 +120,7 @@ html, body {
     align-items: center;
 }
 
-#content::-webkit-scrollbar {
+.content::-webkit-scrollbar {
     display: none;
 }
 
@@ -131,21 +131,27 @@ html, body {
 
     background-color: antiquewhite;
 
-    padding: 20px;
+    padding-left: 40px;
+    padding-top: 20px;
 }
 
 p {
-    width: 275px;
+    width: 300px;
 }
 
 .poster {
-    width: 200px;
-    padding-top: 20px;
+    width: 250px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-right: 40px;
 }
 
 .tabBar {
     display: flex;
     flex-direction: row;
+
+    position: relative;
+    left: -100px;
 }
 
 .tabs {

@@ -40,13 +40,13 @@
             <div id="rightSide">
                 <div class="portfolio">
                     <div class="tabBar">
-                        <img src="portfolioAssets/projectsTab.png" alt="projects" class="tabs">
-                        <img src="portfolioAssets/experienceTab.png" alt="experience" class="tabs">
-                        <img src="portfolioAssets/aboutMeTab.png" alt="aboutMe" class="tabs">
+                        <img src="portfolioAssets/projectsTab.png" alt="projects" class="tabs" id="projectsTab">
+                        <img src="portfolioAssets/experienceTab.png" alt="experience" class="tabs" id="experienceTab">
+                        <img src="portfolioAssets/aboutMeTab.png" alt="aboutMe" class="tabs" id="aboutMeTab">
                     </div>
                     <div id="tabContent">
                         <div id="paper">
-                            <div id="content">
+                            <div class="content" id="projectsContent">
                                 <div class="contentText">
                                     <div>
                                         <h1>Stitchlings</h1>
@@ -76,6 +76,64 @@
                                     </div>
 
                                     <img src="portfolioAssets/alibi.png" alt="alibiPoster" class="poster">
+                                </div>
+                            </div>
+
+                            <div class="content" id="experienceContent">
+                                <div class="contentText">
+                                    <div>
+                                        <h1>Game User Researcher Intern</h1>
+                                        <p>User Behavior Research
+                                        </p>
+                                    </div>
+                                    <img src="portfolioAssets/stitchlings.jpg" alt="stitchlingsPoster" class="poster">
+                                </div>
+
+                                <div class="contentText">
+                                    <div>
+                                        <h1>Usability Lead</h1>
+                                        <p>Stitchlings, Alibi</p>
+                                    </div>
+
+                                    <img src="portfolioAssets/wokThisWay.png" alt="wokThisWayPoster" class="poster">
+                                </div>
+
+                                <div class="contentText">
+                                    <div>
+                                        <h1>UI/UX/Narrative Design Intern</h1>
+                                        <p>Thirteen Forty Seven</p>
+                                    </div>
+
+                                    <img src="portfolioAssets/alibi.png" alt="alibiPoster" class="poster">
+                                </div>
+
+                                <div class="contentText">
+                                    <div>
+                                        <h1>UI Engineer</h1>
+                                        <p>Wok This Way</p>
+                                    </div>
+
+                                    <img src="portfolioAssets/alibi.png" alt="alibiPoster" class="poster">
+                                </div>
+                            </div>
+
+                            <div class="content" id="aboutMeContent">
+                                <div class="contentText">
+                                    <div>
+                                        <h1>Hi, I'm Cherry!</h1>
+                                        <p> I love making games, UX research or design, and web dev!
+                                        </p>
+                                    </div>
+                                    <img src="portfolioAssets/stitchlings.jpg" alt="stitchlingsPoster" class="poster">
+                                </div>
+
+                                <div class="contentText">
+                                    <div>
+                                        <h1>Stay in Touch!</h1>
+                                        <p>probably another div here or two with socials</p>
+                                    </div>
+
+                                    <img src="portfolioAssets/wokThisWay.png" alt="wokThisWayPoster" class="poster">
                                 </div>
                             </div>
                         </div>
@@ -119,4 +177,39 @@
     }
     window.addEventListener('resize', updateScale);
     window.addEventListener('load', updateScale);
+
+    // switching tab
+    const projectTab = document.getElementById("projectTab");
+    const projectsContent = document.getElementById("projectsContent");
+
+    projectTab.addEventListener("mouseover", () => {
+        checkbox.click();
+    });
+
+    projectTab.addEventListener("click", () => {
+        const allContent = document.querySelectorAll('.content');
+        allDivs.forEach(div => {
+            div.style.display = "none";
+        });
+
+        projectsContent.style.display = "block";
+    });
+
+
+    const experienceTab = document.getElementById("experienceTab");
+    const experienceContent = document.getElementById("experienceContent");
+
+    projectTab.addEventListener("mouseover", () => {
+        checkbox.click();
+    });
+
+    projectTab.addEventListener("click", () => {
+        const allContent = document.querySelectorAll('.content');
+        allDivs.forEach(div => {
+            div.style.display = "none";
+        });
+
+        experienceContent.style.display = "block";
+    });
+
 </script>
