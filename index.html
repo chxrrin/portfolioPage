@@ -82,8 +82,8 @@
                             <div class="content" id="experienceContent">
                                 <div class="contentText">
                                     <div>
-                                        <h1>Game User Researcher Intern</h1>
-                                        <p>User Behavior Research
+                                        <h1>Game User Research</h1>
+                                        <p>User Behavior Research Intern
                                         </p>
                                     </div>
                                     <img src="portfolioAssets/stitchlings.jpg" alt="stitchlingsPoster" class="poster">
@@ -100,8 +100,8 @@
 
                                 <div class="contentText">
                                     <div>
-                                        <h1>UI/UX/Narrative Design Intern</h1>
-                                        <p>Thirteen Forty Seven</p>
+                                        <h1>UI/UX/Narrative Design</h1>
+                                        <p>Thirteen Forty Seven Intern</p>
                                     </div>
 
                                     <img src="portfolioAssets/alibi.png" alt="alibiPoster" class="poster">
@@ -132,8 +132,6 @@
                                         <h1>Stay in Touch!</h1>
                                         <p>probably another div here or two with socials</p>
                                     </div>
-
-                                    <img src="portfolioAssets/wokThisWay.png" alt="wokThisWayPoster" class="poster">
                                 </div>
                             </div>
                         </div>
@@ -179,37 +177,25 @@
     window.addEventListener('load', updateScale);
 
     // switching tab
-    const projectTab = document.getElementById("projectTab");
-    const projectsContent = document.getElementById("projectsContent");
+    const tabs = [
+        { tabEl: document.getElementById("projectsTab"), contentEl: document.getElementById("projectsContent") },
+        { tabEl: document.getElementById("experienceTab"), contentEl: document.getElementById("experienceContent") },
+        { tabEl: document.getElementById("aboutMeTab"), contentEl: document.getElementById("aboutMeContent") },
+    ];
 
-    projectTab.addEventListener("mouseover", () => {
-        checkbox.click();
-    });
-
-    projectTab.addEventListener("click", () => {
-        const allContent = document.querySelectorAll('.content');
-        allDivs.forEach(div => {
-            div.style.display = "none";
+    function showTab(target, clickedTabEl) {
+        tabs.forEach(({ contentEl, tabEl }) => {
+            contentEl.style.display = "none";
+            tabEl.classList.remove("active");
         });
+        target.style.display = "flex";
+        clickedTabEl.classList.add("active");
+    }
 
-        projectsContent.style.display = "block";
+    tabs.forEach(({ tabEl, contentEl }) => {
+        tabEl.addEventListener("click", () => showTab(contentEl, tabEl));
     });
 
-
-    const experienceTab = document.getElementById("experienceTab");
-    const experienceContent = document.getElementById("experienceContent");
-
-    projectTab.addEventListener("mouseover", () => {
-        checkbox.click();
-    });
-
-    projectTab.addEventListener("click", () => {
-        const allContent = document.querySelectorAll('.content');
-        allDivs.forEach(div => {
-            div.style.display = "none";
-        });
-
-        experienceContent.style.display = "block";
-    });
+    tabs[0].tabEl.classList.add("active");
 
 </script>

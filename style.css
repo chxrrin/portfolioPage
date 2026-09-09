@@ -14,13 +14,16 @@
     transform: translate(-50%, -50%) scale(var(--scale-factor));
 }
 
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
     height: 100vh;
     overflow: hidden;
     display: flex;
     flex-direction: column;
+
+    background-color: lightcoral;
 }
 
 *,
@@ -70,7 +73,7 @@ html, body {
     position: relative;
     width: 500px;
     top: 0px;
-    left: -300px;
+    left: -220px;
 }
 
 #tabContent {
@@ -96,9 +99,9 @@ html, body {
     background-size: cover;
 
     position: relative;
-    left: 75px;
+    left: 105px;
     top: 115px;
-    width: 800px;
+    width: 750px;
     height: 650px;
 
     z-index: 100;
@@ -106,7 +109,7 @@ html, body {
 
 .content {
     position: relative;
-    left: 75px;
+    left: 50px;
     top: 50px;
 
     overflow-y: auto;
@@ -119,10 +122,18 @@ html, body {
     gap: 45px;
     align-items: center;
 }
-
-.content::-webkit-scrollbar {
-    display: none;
+.content::after {
+    content: "";
+    position: relative;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 24px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.35));
+    pointer-events: none;
 }
+
+.content::-webkit-scrollbar {}
 
 .contentText {
     display: flex;
@@ -131,8 +142,11 @@ html, body {
 
     background-color: antiquewhite;
 
-    padding-left: 40px;
+    padding-left: 30px;
     padding-top: 20px;
+
+    width: 600px;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
 }
 
 p {
@@ -152,10 +166,18 @@ p {
 
     position: relative;
     left: -100px;
+
+    z-index: 20;
 }
 
 .tabs {
     width: 200px;
+    filter: brightness(0.7);
+    transition: filter 0.15s ease;
+}
+
+.tabs.active {
+    filter: brightness(1);
 }
 
 .ipod {
@@ -220,4 +242,12 @@ p {
     object-fit: contain;
     pointer-events: none;
     z-index: 999;
+}
+
+#experienceContent {
+    display: none;
+}
+
+#aboutMeContent {
+    display: none;
 }
